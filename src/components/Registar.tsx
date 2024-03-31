@@ -28,7 +28,7 @@ export default function Registar(props: logoImage) {
     const [password, setPassword] = useState(null);
     const [nome, setNome] = useState(null);
 
-    const login = () => {
+    const registo = () => {
 
         if (email != null && password != null) {
             // alert("campos prenchidos")
@@ -78,7 +78,7 @@ export default function Registar(props: logoImage) {
             {/* BOTAO */}
             <Button
                 title="Registar"
-                onPress={() => login()}
+                onPress={() => registo()}
                 // color="#841584"
             />
         </View>

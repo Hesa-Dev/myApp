@@ -46,6 +46,22 @@ import { StyleSheet  } from "react-native";
         fontWeight:"bold",
         padding:4,
         color:"#3498DB"
+    },
+    botaoAcesso:{
+     
+        marginBottom: 10,
+        backgroundColor:"#3498DB",
+        padding: 10,
+        borderRadius: 7,
+        
+        alignItems: "center",
+        justifyContent:"center"
+        
+    },
+    labelBotaoAcesso:{
+        textAlign: "center",
+        fontWeight:"bold",
+        color:"#F7F9F9",
     }
 });
 

@@ -10,13 +10,14 @@ import {
     View,
     TextInput,
     Button,
-    Image
+    Image,
+    TouchableOpacity
 } from 'react-native';
 
 import styles from './styles';
 
-interface logoImage{
-    logo?:any
+interface logoImage {
+    logo?: any
 }
 
 
@@ -27,9 +28,9 @@ export default function Main(props: logoImage) {
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
 
-    const  login = ()=>{
+    const login = () => {
 
-        if (email!=null && password!=null) {
+        if (email != null && password != null) {
             // alert("campos prenchidos")
             alert(email + " " + password)
 
@@ -38,18 +39,18 @@ export default function Main(props: logoImage) {
 
         return alert("campos nao preenchidos")
     }
-   
+
     return (
 
         <View>
             <View style={styles.containeLogo}>
                 <Image
                     style={styles.logo}
-                source={props.logo}
+                    source={props.logo}
                 />
             </View>
 
-            <Text  style={styles.labelInput} >E-mail</Text>
+            <Text style={styles.labelInput} >E-mail</Text>
             <TextInput
                 style={styles.input}
                 value={email}
@@ -64,14 +65,15 @@ export default function Main(props: logoImage) {
                 placeholder="ex:. XXXXXXXX"
                 onChangeText={setPassword}
             />
-             <Text style={styles.textoJustificado}  >Registar</Text>
+            <Text style={styles.textoJustificado}  >Registar</Text>
 
-            <Button
-                title="Login"
-                onPress={()=>login()}
-                // color="#841584"
-                accessibilityLabel="Learn more about this purple button"
-            />
+            <TouchableOpacity
+                onPress={() => login()}
+                style={styles.botaoAcesso}
+            >
+                <Text style={styles.labelBotaoAcesso}  > Login</Text>
+            </TouchableOpacity>
+           
         </View>
     )
 }
