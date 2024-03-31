@@ -10,11 +10,10 @@ import {
     View,
     TextInput,
     Button,
-    Image,
-    TouchableOpacity
+    Image
 } from 'react-native';
 
-import styles from './styles';
+import styles from '../styles';
 
 interface logoImage {
     logo?: any
@@ -23,12 +22,13 @@ interface logoImage {
 
 
 
-export default function Main(props: logoImage) {
+export default function Registar(props: logoImage) {
 
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
+    const [nome, setNome] = useState(null);
 
-    const login = () => {
+    const registo = () => {
 
         if (email != null && password != null) {
             // alert("campos prenchidos")
@@ -43,6 +43,7 @@ export default function Main(props: logoImage) {
     return (
 
         <View>
+            {/* LOGO */}
             <View style={styles.containeLogo}>
                 <Image
                     style={styles.logo}
@@ -50,14 +51,23 @@ export default function Main(props: logoImage) {
                 />
             </View>
 
-            <Text style={styles.labelInput} >E-mail</Text>
+            {/* NOME */}
+            <Text style={styles.labelInput} >Nome</Text>
+            <TextInput
+                style={styles.input}
+                value={nome}
+                placeholder=" ex:. mail@domain.com"
+                onChangeText={setNome}
+            />
+              {/* EMAIL */}
+              <Text style={styles.labelInput} >E-mail</Text>
             <TextInput
                 style={styles.input}
                 value={email}
                 placeholder=" ex:. mail@domain.com"
                 onChangeText={setEmail}
-            // onChangeText={(e) => setEmail(e.targe)}
             />
+            {/* PASSWORD */}
             <Text style={styles.labelInput}>Password</Text>
             <TextInput
                 style={styles.input}
@@ -65,15 +75,12 @@ export default function Main(props: logoImage) {
                 placeholder="ex:. XXXXXXXX"
                 onChangeText={setPassword}
             />
-            <Text style={styles.textoJustificado}  >Registar</Text>
-
-            <TouchableOpacity
-                onPress={() => login()}
-                style={styles.botaoAcesso}
-            >
-                <Text style={styles.labelBotaoAcesso}  > Login</Text>
-            </TouchableOpacity>
-           
+            {/* BOTAO */}
+            <Button
+                title="Registar"
+                onPress={() => registo()}
+                // color="#841584"
+            />
         </View>
     )
 }

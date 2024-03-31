@@ -53,7 +53,6 @@ import { StyleSheet  } from "react-native";
         backgroundColor:"#3498DB",
         padding: 10,
         borderRadius: 7,
-        
         alignItems: "center",
         justifyContent:"center"
         
@@ -62,6 +61,14 @@ import { StyleSheet  } from "react-native";
         textAlign: "center",
         fontWeight:"bold",
         color:"#F7F9F9",
+    },
+    textoAviso:{
+        padding:2,
+        // marginBottom:2,
+        fontWeight:"bold",
+        fontSize:12,
+        color:"red"
+        
     }
 });
 
