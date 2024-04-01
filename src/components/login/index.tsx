@@ -13,6 +13,11 @@ import {
     Image,
     TouchableOpacity
 } from 'react-native';
+import {
+    FontAwesome,
+    Entypo,
+    AntDesign
+} from '@expo/vector-icons'
 
 import styles from './styles';
 
@@ -75,13 +80,14 @@ export default function Main(props: logoImage) {
                 placeholder={"Ex:. xxxxxxxx"}
                 onChangeText={setPassword}
             />
-            {/*  REGISTAR */}
+            {/*  BTN Login */}
             <Text style={styles.textoJustificado}  >Registar</Text>
             <TouchableOpacity
                 onPress={() => login()}
                 style={styles.botaoAcesso}
             >
-                <Text style={styles.labelBotaoAcesso}  > Login</Text>
+                <Entypo name='login' size={20} color="#FFF"/>
+                {/* <Text style={styles.labelBotaoAcesso}  > Login</Text> */}
             </TouchableOpacity>
         </View>
     )
