@@ -43,9 +43,12 @@ import { StyleSheet  } from "react-native";
 
     },
     labelInput:{
+        flexDirection:"row",
         fontWeight:"bold",
-        padding:4,
-        color:"#3498DB"
+       margin:4,
+        color:"#3498DB",
+        alignItems:"center",
+        justifyContent:"center"
     },
     botaoAcesso:{
      
@@ -69,7 +72,9 @@ import { StyleSheet  } from "react-native";
         fontSize:12,
         color:"red"
         
-    }
+    },
+
+  
 });
 
 export default styles;

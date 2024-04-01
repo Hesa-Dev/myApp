@@ -16,7 +16,8 @@ import {
 import {
     FontAwesome,
     Entypo,
-    AntDesign
+    AntDesign,
+    FontAwesome6 
 } from '@expo/vector-icons'
 
 import styles from './styles';
@@ -38,7 +39,7 @@ export default function Main(props: logoImage) {
 
     const login = () => {
 
-        if (email== null || password == null) {
+        if (email == null || password == null) {
 
             Vibration.vibrate()
             setErrorMsg("Campos Obrigatorio (*)")
@@ -49,7 +50,7 @@ export default function Main(props: logoImage) {
         setEmail(null)
         setPassword(null)
         alert("logando...")
-        return 
+        return
     }
 
     return (
@@ -63,8 +64,10 @@ export default function Main(props: logoImage) {
             </View>
 
             {/*  E-MAIL */}
-            <Text style={styles.labelInput} >E-mail</Text>
-            { errorMsg &&<Text style={styles.textoAviso} >{errorMsg}</Text> }
+            <Text style={styles.labelInput} >
+                <Entypo name='mail' size={17} /> E-mail
+            </Text>
+            {errorMsg && <Text style={styles.textoAviso} >{errorMsg}</Text>}
             <TextInput
                 style={styles.input}
                 value={email}
@@ -72,8 +75,10 @@ export default function Main(props: logoImage) {
                 onChangeText={setEmail}
             />
             {/*  PASSWORD */}
-            <Text style={styles.labelInput}>Password</Text>
-            { errorMsg &&<Text style={styles.textoAviso} >{errorMsg}</Text> }
+            <Text style={styles.labelInput} >
+                <FontAwesome6 name="unlock-keyhole" size={17}  /> Password
+            </Text>
+            {errorMsg && <Text style={styles.textoAviso} >{errorMsg}</Text>}
             <TextInput
                 style={styles.input}
                 value={password}
@@ -86,7 +91,8 @@ export default function Main(props: logoImage) {
                 onPress={() => login()}
                 style={styles.botaoAcesso}
             >
-                <Entypo name='login' size={20} color="#FFF"/>
+                {/* icons  */}
+                <Entypo name='login' size={20} color="#FFF" />
                 {/* <Text style={styles.labelBotaoAcesso}  > Login</Text> */}
             </TouchableOpacity>
         </View>
