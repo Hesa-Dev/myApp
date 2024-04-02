@@ -1,3 +1,12 @@
+
+LINKS IMPORTANTES 
+
+https://expo.dev/
+https://icons.expo.fyi/Index
+https://reactnavigation.org/docs/native-stack-navigator#props
+
+
+
 Primeiros Passo com  React Native 
 
 Configuração do ambiente  & Instalação de pacote 

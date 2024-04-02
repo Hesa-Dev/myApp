@@ -59,7 +59,9 @@ export default function Main(props: logoImage) {
             <View style={styles.containeLogo}>
                 <Image
                     style={styles.logo}
-                    source={props.logo}
+                    // source={props.logo}
+                    source={require("../../../assets/paypal.png")}
+                    // const logo = require("./assets/paypal.png")
                 />
             </View>
 
@@ -83,6 +85,7 @@ export default function Main(props: logoImage) {
                 style={styles.input}
                 value={password}
                 placeholder={"Ex:. xxxxxxxx"}
+                secureTextEntry={true}
                 onChangeText={setPassword}
             />
             {/*  BTN Login */}
