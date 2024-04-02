@@ -92,3 +92,13 @@ import {
 Renderizar icone 
 <FontAwesome6 name="hockey-puck" size={24} color="black" />
 
+
+EXTRAS 
+
+CRIAR MAPAS DIAGRAMAS ...
+https://whimsical.com/
+
+LIVROS GRATUITOS DE PROGRAMAÇÃO
+https://github.com/free-educa/books
+
+
