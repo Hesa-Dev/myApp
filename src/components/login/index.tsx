@@ -19,6 +19,7 @@ import {
     AntDesign,
     FontAwesome6 
 } from '@expo/vector-icons'
+import { AuthContext } from '../../contexts/AuthContext';
 
 import styles from './styles';
 
@@ -33,9 +34,11 @@ export default function Main() {
     const [password, setPassword] = useState(null);
     const [errorMsg, setErrorMsg] = useState(null);
 
+    const { signIn} = useContext(AuthContext)
 
 
-    const login = () => {
+
+    const  login = async () => {
 
         if (email == null || password == null) {
 
@@ -43,6 +46,8 @@ export default function Main() {
             setErrorMsg("Campos Obrigatorio (*)")
             return
         }
+
+        await signIn({email, password})
 
         setErrorMsg(null)
         setEmail(null)

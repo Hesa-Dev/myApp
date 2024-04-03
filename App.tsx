@@ -3,6 +3,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import Routes from './src/routes';
 
+import { AuthProvider } from './src/contexts/AuthContext';
+
 
 export default function App() {
 
@@ -11,15 +13,14 @@ export default function App() {
   return (
 
     <NavigationContainer >
-
-      <StatusBar
-        backgroundColor="#3498DB"
-        translucent={false}
-        style="auto"
-      />
-
+      <AuthProvider>
+        <StatusBar
+          backgroundColor="#3498DB"
+          translucent={false}
+          style="auto"
+        />
         <Routes />
-
+      </AuthProvider>
     </NavigationContainer>
 
     // <View style={styles.container}>
