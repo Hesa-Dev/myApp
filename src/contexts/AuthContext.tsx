@@ -1,4 +1,4 @@
-import React, { useState, createContext, ReactNode } from 'react';
+import React, { useState, createContext, ReactNode, useEffect } from 'react';
 import { api } from '../services/api';
 import AsyncStorage
     from '@react-native-async-storage/async-storage';
@@ -43,6 +43,29 @@ export function AuthProvider({ children }: AuthProviderProps) {
     // !! --> permite converter uma variavel em booleano | Se variavel for nulo ou vazio (false) caso contrário (true) 
     const isAuthenticated = !!user.id;
 
+    useEffect(() => {
+
+        async function getInfoUser() {
+            const userInfo = await AsyncStorage.getItem("@minhafinanca")
+            let hasUser: UserProps = JSON.parse(userInfo || '{}')
+
+            if (Object.keys(hasUser).length > 0) {
+                api.defaults.headers.common['Authorization'] = `Bearer ${hasUser.token}`
+                setUser({
+                    id: hasUser.id,
+                    name:hasUser.name,
+                    email:hasUser.email,
+                    token:hasUser.token
+                })
+            }
+
+        }
+
+        getInfoUser()
+
+    }, [])
+
+
 
     async function signIn({ email, password }: SignInProps) {
 
@@ -68,7 +91,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
                 email,
                 token
             })
-
 
             // then(function async (resp) {
 
