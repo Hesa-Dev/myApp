@@ -1,5 +1,7 @@
 import React, { useState, createContext, ReactNode } from 'react';
 import { api } from '../services/api';
+import AsyncStorage
+    from '@react-native-async-storage/async-storage';
 
 type AuthData = {
 
@@ -46,13 +48,48 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
         try {
 
-            const response = api.post('/session', {
+            const response = await api.post('/session', {
                 email,
                 password
-            }).then(function (resp) {
-
-                console.log(resp.data)
             })
+
+            console.log(response.data)
+
+            const { id, name, token } = response.data
+
+            const dados = {
+                ...response.data
+            }
+            await AsyncStorage.setItem('@minhafinanca', JSON.stringify(dados))
+            api.defaults.headers.common['Authorization'] = `Bearer ${token}`
+            setUser({
+                id,
+                name,
+                email,
+                token
+            })
+
+
+            // then(function async (resp) {
+
+
+            //     const {id , name , email, token} = resp.data
+
+            //     const data = {
+            //         ...resp.data
+            //     }
+
+            //     await AsyncStorage.setItem('@minhafinanca', JSON.stringify(data))
+
+            //     setUser({
+            //         id,
+            //         name,
+            //         email,
+            //         token
+            //     })
+
+            //     console.log(resp.data)
+            // })
         } catch (error) {
 
             console.log(error)
