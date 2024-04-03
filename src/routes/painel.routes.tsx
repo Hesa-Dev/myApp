@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator();
 export default function AppRoutes() {
     return (
       <Stack.Navigator >
-       <Stack.Screen name="Painel"   options={{headerShown:false}} component={Dashboard} />
+       <Stack.Screen name="Painel Admin"    component={Dashboard} />
       </Stack.Navigator>
     );
   }

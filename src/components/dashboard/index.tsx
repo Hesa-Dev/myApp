@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text , Button} from "react-native";
 import styles from './styles';
 import React , {
     useState,
@@ -10,12 +10,20 @@ import { AuthContext } from '../../contexts/AuthContext';
 
 export default function Dashboard(){
 
-const { user} = useContext(AuthContext)
+const { user, signOut} = useContext(AuthContext)
 
     return (
 
         <View style={styles.container}> 
-            <Text> Bem Vindo {user.name} Ao Seu Painel</Text>
+            <Text style={{marginBottom:12}}> Bem Vindo {user.name} Ao Seu Painel</Text>
+
+            <Button
+             title="Logout"
+             onPress={signOut}
+             />
         </View>
+
+
+
     )
 }

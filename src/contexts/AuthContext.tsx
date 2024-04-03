@@ -7,7 +7,9 @@ type AuthData = {
 
     user: UserProps,
     isAuthenticated: boolean,
-    signIn: (credentials: SignInProps) => Promise<void>
+    signIn: (credentials: SignInProps) => Promise<void> ,
+    signOut:() =>Promise<void>
+    
 }
 
 type UserProps = {
@@ -53,9 +55,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
                 api.defaults.headers.common['Authorization'] = `Bearer ${hasUser.token}`
                 setUser({
                     id: hasUser.id,
-                    name:hasUser.name,
-                    email:hasUser.email,
-                    token:hasUser.token
+                    name: hasUser.name,
+                    email: hasUser.email,
+                    token: hasUser.token
                 })
             }
 
@@ -118,11 +120,24 @@ export function AuthProvider({ children }: AuthProviderProps) {
         }
     }
 
+    async function signOut() {
+
+        await AsyncStorage.clear().then(() => {
+            setUser({
+                id: "",
+                email: "",
+                name: "",
+                token: ""
+            })
+        })
+
+    }
+
 
 
     return (
 
-        <AuthContext.Provider value={{ user, isAuthenticated, signIn }}>
+        <AuthContext.Provider value={{ user, isAuthenticated, signIn , signOut }}>
             {children}
         </AuthContext.Provider>
     )
