@@ -2,7 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import Routes from './src/routes';
-import Main from './src/components/login';
 
 
 export default function App() {
@@ -11,13 +10,16 @@ export default function App() {
 
   return (
 
-    <NavigationContainer>
+    <NavigationContainer >
+
       <StatusBar
         backgroundColor="#3498DB"
-        // barStyle="light-content"
-        translucent={false} 
+        translucent={false}
+        style="auto"
       />
-      <Routes />
+
+        <Routes />
+
     </NavigationContainer>
 
     // <View style={styles.container}>

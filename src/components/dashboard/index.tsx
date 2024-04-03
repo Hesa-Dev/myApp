@@ -8,7 +8,7 @@ export default function Dashboard(){
     return (
 
         <View style={styles.container}> 
-            <Text> Dashboard Area</Text>
+            <Text> Painel Utilizador </Text>
         </View>
     )
 }

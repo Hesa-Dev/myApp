@@ -27,9 +27,7 @@ interface logoImage {
 }
 
 
-
-
-export default function Main(props: logoImage) {
+export default function Main() {
 
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
@@ -55,7 +53,7 @@ export default function Main(props: logoImage) {
 
     return (
 
-        <View>
+        <View  style={styles.container} >
             <View style={styles.containeLogo}>
                 <Image
                     style={styles.logo}
@@ -65,8 +63,8 @@ export default function Main(props: logoImage) {
                 />
             </View>
 
-            {/*  E-MAIL */}
-            <Text style={styles.labelInput} >
+            {/*  E-MAIL  */}
+            <Text  style={styles.labelInput} >
                 <Entypo name='mail' size={17} /> E-mail
             </Text>
             {errorMsg && <Text style={styles.textoAviso} >{errorMsg}</Text>}

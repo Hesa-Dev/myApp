@@ -1,14 +1,15 @@
 import React from 'react';
 import { View, ActivityIndicator, StyleSheet } from "react-native";
-import AppRoutes from "./app.routes";
-import AuthRoutes from "./app.routes";
+// import AuthRoutes from "./painel.routes";
+import AuthRoutes from './auth.routes';
+import AppRoutes from './painel.routes';
 
 
 
-function Routes() {
+export default  function Routes() {
 
     const isAuthenticated = false
-    const loading = true
+    const loading = false
 
     if (loading) {
 
@@ -21,7 +22,9 @@ function Routes() {
         )
     }
     return (
-        isAuthenticated ? <AppRoutes /> : <AuthRoutes />
+
+        isAuthenticated? <AppRoutes/> :   <AuthRoutes />
+        
     )
 }
 
@@ -34,5 +37,3 @@ const styles = StyleSheet.create({
     },
 });
 
-
-export default Routes 

@@ -75,6 +75,8 @@ https://www.youtube.com/watch?v=VDgihqrZUQg
 Navegação de Paginas 
 https://reactnavigation.org/
 
+https://www.youtube.com/watch?v=gH9Vvq6WbnA
+
 Instalar biblioteca Navegação  
 # npm install @react-navigation/native
 # npx expo install react-native-screens react-native-safe-area-context

@@ -43,12 +43,13 @@ import { StyleSheet  } from "react-native";
 
     },
     labelInput:{
-        flexDirection:"row",
         fontWeight:"bold",
-       margin:4,
+        margin:4,
         color:"#3498DB",
-        alignItems:"center",
-        justifyContent:"center"
+        alignContent:"flex-start",
+        justifyContent:"flex-start",
+        textAlign:"left",
+        width:"73%"
     },
     botaoAcesso:{
      
@@ -57,8 +58,8 @@ import { StyleSheet  } from "react-native";
         padding: 10,
         borderRadius: 7,
         alignItems: "center",
-        justifyContent:"center"
-        
+        justifyContent:"center",
+        width:"75%"
     },
     labelBotaoAcesso:{
         textAlign: "center",
@@ -70,9 +71,18 @@ import { StyleSheet  } from "react-native";
         // marginBottom:2,
         fontWeight:"bold",
         fontSize:12,
-        color:"red"
+        color:"red",
+        width:"73%",
+        marginBottom:2
         
     },
+    container: {
+        flex: 1,
+        // backgroundColor: '#CACFD2',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width:"auto"
+      },
 
   
 });
